@@ -27,10 +27,10 @@ const AsideBar = async ({ children }: AsideBarProps) => {
         <SheetHeader className="flex flex-col gap-2 mt-4">
           <SheetTitle>Account</SheetTitle>
           <SheetDescription className="flex flex-col gap-1">
-            <p className="text-sm text-gray-900">{session?.user?.name}</p>
-            <p className="text-xs text-gray-500 font-bold">
+            <span className="text-sm text-gray-900">{session?.user?.name}</span>
+            <span className="text-xs text-gray-500 font-bold">
               {session?.user?.email}
-            </p>
+            </span>
           </SheetDescription>
         </SheetHeader>
         <SheetFooter>
