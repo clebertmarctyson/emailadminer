@@ -1,36 +1,100 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# EmailAdminer
 
-## Getting Started
+EmailAdminer is a powerful Next.js application designed to streamline your Gmail management experience. With features like bulk email deletion and subscription management, EmailAdminer helps you take control of your inbox and boost your productivity.
 
-First, run the development server:
+![EmailAdminer Logo](https://www.emailadminer.com/logo.png)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🌟 Features
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **Bulk Email Deletion**: Easily remove hundreds of emails based on sender name.
+- **Subscription Management**: Keep track of your email subscriptions and unsubscribe with ease.
+- **Gmail Integration**: Seamlessly connect with your Gmail account for efficient management.
+- **User-friendly Dashboard**: Intuitive interface for managing your email cleanup tasks.
+- **Secure Authentication**: Utilizes NextAuth with Google provider for safe and easy login.
+- **Responsive Design**: Works smoothly on desktop and mobile devices.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🚀 Getting Started
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### Prerequisites
 
-## Learn More
+- Node.js (v20.12.2 or higher)
+- pnpm (v9.7.0 or higher)
+- Gmail Account
 
-To learn more about Next.js, take a look at the following resources:
+### Installation
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Clone the repository:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+   ```
+   git clone https://github.com/clebertmarctyson/emailadminer.git
+   cd emailadminer
+   ```
 
-## Deploy on Vercel
+2. Install dependencies:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+   ```
+   pnpm install
+   ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+3. Set up environment variables:
+   Create a `.env` file in the root directory and add the following:
+
+   ```
+   DATABASE_URL="your_database_url"
+   NEXTAUTH_URL="http://localhost:3000"
+   NEXTAUTH_SECRET="your_nextauth_secret"
+   GOOGLE_CLIENT_ID="your_google_client_id"
+   GOOGLE_CLIENT_SECRET="your_google_client_secret"
+   ```
+
+4. Run the development server:
+
+   ```
+   pnpm dev
+   ```
+
+5. Open [http://localhost:3000](http://localhost:3000) in your browser to see the application.
+
+## 🛠️ Tech Stack
+
+- [Next.js](https://nextjs.org/)
+- [React](https://reactjs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [TailwindCSS](https://tailwindcss.com/)
+- [NextAuth.js](https://next-auth.js.org/)
+- [Google OAuth](https://developers.google.com/identity/protocols/oauth2)
+- [Prisma](https://www.prisma.io/)
+- [Gmail API](https://developers.google.com/gmail/api)
+
+## 🤝 Contributing
+
+We welcome contributions to EmailAdminer! Please follow these steps:
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## 📜 License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
+
+## 📞 Contact
+
+Marc Tyson CLEBERT - [@ClebertTyson](https://x.com/ClebertTyson) - marctysonclebert9@gmail.com
+
+Project Link: [https://github.com/clebertmarctyson/emailadminer](https://github.com/clebertmarctyson/emailadminer)
+
+## 🙏 Acknowledgements
+
+- [Next.js Documentation](https://nextjs.org/docs)
+- [TailwindCSS Documentation](https://tailwindcss.com/docs)
+- [NextAuth.js Documentation](https://next-auth.js.org/getting-started/introduction)
+- [Prisma Documentation](https://www.prisma.io/docs/)
+- [Gmail API Documentation](https://developers.google.com/gmail/api/guides)
+- [Google OAuth Documentation](https://developers.google.com/identity/protocols/oauth2)
+
+---
+
+Made with ❤️ by [Marc Tyson CLEBERT](https://github.com/clebertmarctyson)
