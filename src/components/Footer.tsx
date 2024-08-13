@@ -6,7 +6,7 @@ const Footer = () => {
     <footer className="bg-gray-800 text-white py-8">
       <div className="container mx-auto px-6">
         <div className="flex flex-col md:flex-row justify-between items-center">
-          <div className="mb-4 md:mb-0">
+          <Link className="mb-4 md:mb-0" href={"/"}>
             <Image
               src="/logo.png"
               alt="EmailAdminer Logo"
@@ -15,7 +15,7 @@ const Footer = () => {
               priority
               className="invert"
             />
-          </div>
+          </Link>
           <div className="flex flex-col md:flex-row justify-center items-center gap-4">
             <Link href="/privacy" className="hover:text-blue-300">
               Privacy Policy
