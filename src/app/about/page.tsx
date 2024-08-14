@@ -5,7 +5,6 @@ import Image from "next/image";
 import { motion, Variants } from "framer-motion";
 import { Mail, Github, Linkedin, Target } from "lucide-react";
 import Link from "next/link";
-import { redirect } from "next/navigation";
 
 const fadeInUp: Variants = {
   initial: { opacity: 0, y: 60 },
@@ -30,8 +29,8 @@ const About = () => {
             About EmailAdminer
           </h1>
           <p className="text-xl max-w-2xl mx-auto text-gray-700 drop-shadow-sm">
-            A solo project dedicated to simplifying email management and helping
-            you reclaim control of your inbox.
+            We&apos;re on a mission to simplify email management and help you
+            reclaim control of your inbox.
           </p>
         </motion.section>
 
@@ -44,7 +43,7 @@ const About = () => {
             </div>
             <p className="text-xl leading-relaxed text-gray-700 text-center">
               As the creator of EmailAdminer, my goal is to revolutionize inbox
-              management. I'm committed to empowering users to effortlessly
+              management. I&apos;m committed to empowering users to effortlessly
               declutter their emails, saving time and reducing stress. This
               innovative tool is designed to streamline your email experience,
               allowing you to focus on what truly matters.
@@ -62,13 +61,13 @@ const About = () => {
           </h2>
           <div className="bg-white p-8 rounded-lg shadow-lg max-w-2xl mx-auto">
             <div className="flex flex-col md:flex-row items-center">
-              <div className="w-40 h-40 mb-6 md:mb-0 md:mr-8 relative rounded-full border-4 border-blue-100 flex-shrink-0">
+              <div className="w-40 h-40 mb-6 md:mb-0 md:mr-8 relative overflow-hidden rounded-full border-4 border-blue-100 flex-shrink-0">
                 <Image
                   src="/profile.jpg"
                   alt="Marc Tyson CLERBERT"
                   layout="fill"
                   objectFit="cover"
-                  className="rounded-full w-full h-full"
+                  className="rounded-full"
                 />
               </div>
               <div className="flex-1">
@@ -78,8 +77,8 @@ const About = () => {
                 <p className="text-blue-600 mb-4">Founder & Developer</p>
                 <p className="text-gray-600 mb-4">
                   Passionate about creating efficient solutions for everyday
-                  problems. With EmailAdminer, I'm on a mission to make email
-                  management simple and stress-free.
+                  problems. With EmailAdminer, I&apos;m on a mission to make
+                  email management simple and stress-free.
                 </p>
                 <div className="flex space-x-4">
                   <Link
@@ -115,18 +114,18 @@ const About = () => {
             Join the Journey
           </h2>
           <p className="text-lg max-w-2xl mx-auto mb-8 text-gray-700">
-            While EmailAdminer is a solo project, I'm always open to feedback
-            and collaboration. If you're excited about the future of email
-            management or have ideas to share, I'd love to hear from you!
+            While EmailAdminer is a solo project, I&apos;m always open to
+            feedback and collaboration. If you&apos;re excited about the future
+            of email management or have ideas to share, I&apos;d love to hear
+            from you!
           </p>
-          <motion.a
+          <motion.button
             className="bg-blue-600 text-white px-8 py-3 rounded-full hover:bg-blue-700 transition duration-300 shadow-md hover:shadow-lg"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            href="/contact"
           >
             Get in Touch
-          </motion.a>
+          </motion.button>
         </motion.section>
       </motion.main>
     </div>
