@@ -5,6 +5,7 @@ import { cn } from "@/lib/utils";
 
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import Providers from "@/components/providers";
 
 export const metadata: Metadata = {
   title: "EmailAdminer - Streamline Your Gmail Management",
@@ -32,7 +33,9 @@ export default function RootLayout({ children }: RootLayoutProps) {
         )}
       >
         <Header />
-        <main className="flex-1">{children}</main>
+        <main className="flex-1">
+          <Providers>{children}</Providers>
+        </main>
         <Footer />
       </body>
     </html>

@@ -7,14 +7,13 @@ import { signOut } from "next-auth/react";
 const SignOutButton = () => {
   return (
     <Button
-      variant={"destructive"}
-      className="flex-1 flex items-center"
+      variant="destructive"
+      className="flex-1 flex items-center py-1 px-4 rounded-full text-lg font-semibold hover:shadow-lg transition duration-300 transform hover:-translate-y-1"
       onClick={async () => {
         await signOut();
       }}
     >
-      <LogOut size={24} />
-      <span className="ml-2">Sign Out</span>
+      <span className="text-sm">Sign Out</span>
     </Button>
   );
 };

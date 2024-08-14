@@ -1,20 +1,22 @@
 "use client";
 
-import { LogIn } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { signIn } from "next-auth/react";
 
-const SignInButton = () => {
+type SignInButtonProps = {
+  text: string;
+};
+
+const SignInButton = ({ text }: SignInButtonProps) => {
   return (
     <Button
-      variant={"default"}
-      className="flex items-center"
+      variant="default"
+      className="flex-1 flex items-center py-1 px-4 rounded-md text-lg font-semibold hover:shadow-lg transition duration-300 transform hover:-translate-y-1"
       onClick={async () => {
         await signIn();
       }}
     >
-      <LogIn size={24} />
-      <span className="ml-2">Sign In</span>
+      <span className="text-sm">{text}</span>
     </Button>
   );
 };

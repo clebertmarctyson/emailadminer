@@ -11,9 +11,9 @@ const Footer = () => {
               src="/logo.png"
               alt="EmailAdminer Logo"
               width={150}
-              height={150}
+              height={100}
               priority
-              className="invert"
+              className="invert object-contain"
             />
           </Link>
           <div className="flex flex-col md:flex-row justify-center items-center gap-4">
