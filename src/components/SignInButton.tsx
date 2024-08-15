@@ -16,7 +16,7 @@ const SignInButton = ({ text }: SignInButtonProps) => {
         await signIn();
       }}
     >
-      <span className="text-sm">{text}</span>
+      {text}
     </Button>
   );
 };

@@ -43,7 +43,13 @@ model User {
   accounts           Account[]
   sessions           Session[]
   emailDeletionTasks EmailDeletionTask[]
-  plan               String?             @default("free")
+  plan               Plan                @default(FREE)
+}
+
+enum Plan {
+  FREE
+  PRO
+  BUSINESS
 }
 
 model VerificationToken {

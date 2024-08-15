@@ -8,7 +8,8 @@ import { motion, Variants } from "framer-motion";
 import { CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useSession } from "next-auth/react";
-import { pricingPlans, steps } from "@/lib/data";
+import { steps } from "@/lib/data";
+import Pricing from "@/components/Pricing";
 
 const fadeInUp: Variants = {
   initial: { opacity: 0, y: 60 },
@@ -22,27 +23,6 @@ const staggerChildren: Variants = {
 const Home = () => {
   const { data: session, status } = useSession();
 
-  const getActionButton = (planName: string) => {
-    if (status === "loading") return <Button disabled>Loading...</Button>;
-
-    if (status === "authenticated") {
-      if (
-        session?.user?.plan?.toLocaleLowerCase() ===
-        planName?.toLocaleLowerCase()
-      ) {
-        return (
-          <Link href="/dashboard">
-            <Button variant="default">Go to Dashboard</Button>
-          </Link>
-        );
-      } else if (planName !== "Free") {
-        return <Button variant="default">Upgrade Plan</Button>;
-      }
-    }
-
-    return <SignInButton text="Choose Plan" />;
-  };
-
   return (
     <main className="min-h-screen bg-gradient-to-b from-blue-50 to-white text-gray-800">
       <motion.section
@@ -50,6 +30,7 @@ const Home = () => {
         animate="animate"
         variants={staggerChildren}
       >
+        {/* Hero */}
         <section className="container mx-auto px-6 py-24 text-center">
           <motion.h1
             className="text-5xl md:text-7xl font-extrabold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600"
@@ -80,6 +61,7 @@ const Home = () => {
           </motion.div>
         </section>
 
+        {/* Features */}
         <section className="py-24 bg-white">
           <div className="container mx-auto px-6">
             <motion.h2
@@ -132,6 +114,7 @@ const Home = () => {
           </div>
         </section>
 
+        {/* How It Works */}
         <section className="py-24 bg-gray-50">
           <div className="container mx-auto px-6">
             <motion.h2
@@ -163,47 +146,9 @@ const Home = () => {
           </div>
         </section>
 
-        <section className="py-24 bg-white">
-          <div className="container mx-auto px-6">
-            <motion.h2
-              className="text-4xl font-bold text-center mb-12"
-              variants={fadeInUp}
-            >
-              Choose Your Plan
-            </motion.h2>
-            <motion.div
-              className="grid grid-cols-1 md:grid-cols-3 gap-8"
-              variants={staggerChildren}
-            >
-              {pricingPlans.map((plan, index) => (
-                <motion.div
-                  key={index}
-                  className="bg-white p-6 rounded-lg shadow-md border border-gray-200 flex flex-col"
-                  variants={fadeInUp}
-                >
-                  <h3 className="text-2xl font-bold mb-4">{plan.name}</h3>
-                  <p className="text-4xl font-bold mb-6">
-                    {plan.price}
-                    <span className="text-sm font-normal">/month</span>
-                  </p>
-                  <ul className="mb-8 flex-grow">
-                    {plan.features.map((feature, i) => (
-                      <li key={i} className="flex items-center mb-2">
-                        <CheckCircle
-                          className="text-green-500 mr-2"
-                          size={20}
-                        />
-                        <span>{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  {getActionButton(plan.name)}
-                </motion.div>
-              ))}
-            </motion.div>
-          </div>
-        </section>
+        <Pricing />
 
+        {/* CTA */}
         <section className="py-24 bg-gradient-to-r from-blue-600 to-purple-600 text-white">
           <motion.div
             className="container mx-auto px-6 text-center"

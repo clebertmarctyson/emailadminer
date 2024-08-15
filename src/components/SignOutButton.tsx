@@ -13,7 +13,7 @@ const SignOutButton = () => {
         await signOut();
       }}
     >
-      <span className="text-sm">Sign Out</span>
+      Sign Out
     </Button>
   );
 };

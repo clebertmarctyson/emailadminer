@@ -1,3 +1,6 @@
+-- CreateEnum
+CREATE TYPE "Plan" AS ENUM ('FREE', 'PRO', 'BUSINESS');
+
 -- CreateTable
 CREATE TABLE "Account" (
     "id" TEXT NOT NULL,
@@ -33,6 +36,7 @@ CREATE TABLE "User" (
     "email" TEXT,
     "emailVerified" TIMESTAMP(3),
     "image" TEXT,
+    "plan" "Plan" NOT NULL DEFAULT 'FREE',
 
     CONSTRAINT "User_pkey" PRIMARY KEY ("id")
 );
